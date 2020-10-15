@@ -115,7 +115,7 @@ class CartVC: UIViewController {
     }
     
     func configureTableView() {
-        tableView.rowHeight = 200
+        tableView.rowHeight = 180
         tableView.separatorStyle = .singleLine
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.layoutMargins = .zero

@@ -53,7 +53,7 @@ class FavoriteCell: UITableViewCell {
         productImage.translatesAutoresizingMaskIntoConstraints = false
         productImage.image = UIImage(named: "sq.jpeg")
         NSLayoutConstraint.activate([
-            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             productImage.widthAnchor.constraint(equalToConstant: 80),
             productImage.heightAnchor.constraint(equalToConstant: 160),
