@@ -90,6 +90,7 @@ class CartVC: UIViewController {
 
         productsListViewModel.cleanCart(order: Order(products: productsListViewModel.cartProducts, date: Date(),cost: productsListViewModel.totalPriceCount()))
         updateTotalCount()
+        self.presentAlert(title: "Success!", message: "Order is Completed!", buttonTitle: "Ok")
 //        let domain = Bundle.main.bundleIdentifier!
 //               UserDefaults.standard.removePersistentDomain(forName: domain)
 //               UserDefaults.standard.synchronize()
