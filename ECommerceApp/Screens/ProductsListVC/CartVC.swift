@@ -88,14 +88,22 @@ class CartVC: UIViewController {
     
     @objc func completeOrder() {
 
-        productsListViewModel.cleanCart(order: Order(products: productsListViewModel.cartProducts, date: Date(),cost: productsListViewModel.totalPriceCount()))
-        updateTotalCount()
-        self.presentAlert(title: "Success!", message: "Order is Completed!", buttonTitle: "Ok")
-//        let domain = Bundle.main.bundleIdentifier!
-//               UserDefaults.standard.removePersistentDomain(forName: domain)
-//               UserDefaults.standard.synchronize()
-//               print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
-        tableView.reloadData()
+        
+        if productsListViewModel.totalPriceCount() == 0.0 {
+            self.presentAlert(title: "Error!", message: "There is no product in your cart.", buttonTitle: "Ok")
+            
+        }
+        else {
+            productsListViewModel.cleanCart(order: Order(products: productsListViewModel.cartProducts, date: Date(),cost: productsListViewModel.totalPriceCount()))
+                   updateTotalCount()
+                    self.presentAlert(title: "Success!", message: "Order is Completed!", buttonTitle: "Ok")
+            //        let domain = Bundle.main.bundleIdentifier!
+            //               UserDefaults.standard.removePersistentDomain(forName: domain)
+            //               UserDefaults.standard.synchronize()
+            //               print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+                    tableView.reloadData()
+        }
+ 
     }
     
     func configureProductPriceLabel() {
